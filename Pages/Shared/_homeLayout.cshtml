@@ -1,0 +1,939 @@
+﻿@{
+    var uers = Context.Session.GetString("user");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handmade</title>
+    <link rel="stylesheet" href="~/cs_js/Style.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler" />
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo">Handmade<span>.</span></a>
+
+        <nav class="navbar">
+            <a href="#home">Trang Chủ</a>
+            <a href="#about">Giới Thiệu</a>
+            <a href="#products">Sản Phẩm</a>
+            <a href="#tutorial">Hướng Dẫn</a>
+            <a href="#review">Đánh Giá</a>
+            <a href="#contact">Liên Hệ</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="./HeartView.html" class="fas fa-heart"></a>
+            <a href="/login/dangnhap" class="fas fa-shopping-cart"></a>
+            @if (uers == "true")
+            {
+                <a href="/login/dangxuat"  class="fas fa-user"></a>
+                
+            }
+            else
+            {
+                <a href="/login/dangnhap" class="fas fa-user"></a>
+               
+            }
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search"
+                   name=""
+                   placeholder="Tìm kiếm..."
+                   id="search-box" />
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </header>
+
+   @RenderBody()
+
+    <section class="about" id="about">
+       
+    
+        <h1 class="heading"><span> Giới Thiệu </span> Chúng Tôi</h1>
+
+        <div class="row">
+            <div class="video-container">
+                <video src="./Uploads/vd.mp4" loop autoplay muted></video>
+                <h3>Nền Tảng Đáng Tin Cậy</h3>
+            </div>
+
+            <div class="content">
+                <h3>Tại sao nên chọn chúng tôi?</h3>
+                <p>
+                    Sản phẩm độc đáo: Chúng tôi cung cấp các sản phẩm thủ công độc đáo
+                    và đa dạng, được làm bằng tay bởi các nghệ nhân tài năng và đam mê.
+                    Tất cả các sản phẩm đều được thiết kế với tinh thần sáng tạo và tinh
+                    tế để giúp bạn tạo nên một không gian sống tươi đẹp và độc đáo.
+                </p>
+                <p>
+                    Hướng dẫn làm đồ handmade chi tiết: Ngoài việc cung cấp các sản phẩm
+                    thủ công, chúng tôi còn cung cấp các hướng dẫn làm đồ handmade chi
+                    tiết và dễ hiểu giúp bạn tự tay làm các sản phẩm độc đáo và ấn
+                    tượng.
+                </p>
+                <p>
+                    Dịch vụ khách hàng chuyên nghiệp: Chúng tôi cam kết đầu tư vào dịch
+                    vụ khách hàng chuyên nghiệp và tận tụy, luôn sẵn sàng hỗ trợ và giải
+                    đáp mọi thắc mắc của khách hàng.
+                </p>
+                <a href="#" class="btn">Tìm hiểu thêm</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="icons-container">
+        <div class="icons">
+            <img src="./Uploads/ic1.jpg" alt="" />
+            <div class="info">
+                <h3>Miễn phí vận chuyển</h3>
+                <span>Tất cả các đơn đặt hàng</span>
+            </div>
+        </div>
+
+        <div class="icons">
+            <img src="./Uploads/ic2.jpg" alt="" />
+            <div class="info">
+                <h3>10 ngày đổi trả</h3>
+                <span>Đảm bảo hoàn tiền</span>
+            </div>
+        </div>
+
+        <div class="icons">
+            <img src="./Uploads/ic3.jpg" alt="" />
+            <div class="info">
+                <h3>Ưu đãi & quà tặng</h3>
+                <span>Tất cả các đơn đặt hàng</span>
+            </div>
+        </div>
+
+        <div class="icons">
+            <img src="./Uploads/ic4.jpg" alt="" />
+            <div class="info">
+                <h3>Thanh toán an toàn</h3>
+                <span>Được bảo vệ bởi Momo</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h1 class="heading">Sản Phẩm <span>Mới Nhất</span></h1>
+
+        <div class="box-container">
+            <div class="box">
+                <span class="discount">-35%</span>
+                <div class="image">
+                    <img src="./Uploads/sp1a.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Thẻ đánh dấu sách</h3>
+                    <div class="price">&#8363;49.800 <span>&#8363;76.400</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-32%</span>
+                <div class="image">
+                    <img src="./Uploads/sp2a.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Đĩa hoạ tiết lá cây nhiệt đới</h3>
+                    <div class="price">&#8363;99.000 <span>&#8363;145.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-40%</span>
+                <div class="image">
+                    <img src="./Uploads/sp3a.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Đĩa hoạ tiết cành hoa tím</h3>
+                    <div class="price">&#8363;68.272 <span>&#8363;113.786</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-43%</span>
+                <div class="image">
+                    <img src="./Uploads/sp4a.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Vòng hoa vườn nấm</h3>
+                    <div class="price">&#8363;119.000 <span>&#8363;210.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-18%</span>
+                <div class="image">
+                    <img src="./Uploads/sp1b.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Túi hoạ tiết hoa cúc</h3>
+                    <div class="price">&#8363;295.000 <span>&#8363;360.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-11%</span>
+                <div class="image">
+                    <img src="./Uploads/sp2b.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Chậu cây xanh móc len</h3>
+                    <div class="price">&#8363;169.000 <span>&#8363;190.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-25%</span>
+                <div class="image">
+                    <img src="./Uploads/sp3b.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Vòng hạt cườm hoạ tiết hoa</h3>
+                    <div class="price">&#8363;123.750<span>&#8363;164.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-24%</span>
+                <div class="image">
+                    <img src="./Uploads/sp4b.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Chậu hoa tử đằng hạt cườm</h3>
+                    <div class="price">&#8363;342.000 <span>&#8363;450.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-30%</span>
+                <div class="image">
+                    <img src="./Uploads/sp1c.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Thiệp sinh nhật cài hoa</h3>
+                    <div class="price">&#8363;26.600 <span>&#8363;53.200</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-20%</span>
+                <div class="image">
+                    <img src="./Uploads/sp2c.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Bó hoa tulip len móc</h3>
+                    <div class="price">&#8363;108.000 <span>&#8363;135.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-39%</span>
+                <div class="image">
+                    <img src="./Uploads/sp3c.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Khung tranh hoa khô</h3>
+                    <div class="price">&#8363;90.000 <span>&#8363;55.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-25%</span>
+                <div class="image">
+                    <img src="./Uploads/sp4c.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Dream catcher trăng khuyết</h3>
+                    <div class="price">&#8363;164.000 <span>&#8363;205.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-30%</span>
+                <div class="image">
+                    <img src="./Uploads/sp1d.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Tiểu cảnh căn nhà nhỏ</h3>
+                    <div class="price">&#8363;155.687 <span>&#8363;222.410</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-37%</span>
+                <div class="image">
+                    <img src="./Uploads/sp2d.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Đèn hoa hướng dương</h3>
+                    <div class="price">&#8363;53.800 <span>&#8363;85.100</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-25%</span>
+                <div class="image">
+                    <img src="./Uploads/sp3d.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Chậu cây hạt cườm</h3>
+                    <div class="price">&#8363;117.750 <span>&#8363;157.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-25%</span>
+                <div class="image">
+                    <img src="./Uploads/sp4d.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Bó nhiều loại hoa len móc</h3>
+                    <div class="price">&#8363;120.000 <span>&#8363;90.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-11%</span>
+                <div class="image">
+                    <img src="./Uploads/sp1e.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Đèn thả hình hoa trắng</h3>
+                    <div class="price">&#8363;178.000 <span>&#8363;199.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-20%</span>
+                <div class="image">
+                    <img src="./Uploads/sp2e.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Kệ gỗ hoạ tiết thân cây</h3>
+                    <div class="price">&#8363;480.880 <span>&#8363;601.100</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-11%</span>
+                <div class="image">
+                    <img src="./Uploads/sp3e.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Mành macrame treo tường</h3>
+                    <div class="price">&#8363;268.000 <span>&#8363;395.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-34%</span>
+                <div class="image">
+                    <img src="./Uploads/sp4e.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Nến hoạ tiết lá dương xỉ</h3>
+                    <div class="price">&#8363;65.000 <span>&#8363;99.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-40%</span>
+                <div class="image">
+                    <img src="./Uploads/sp1f.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Chậu hoa cúc trắng len móc</h3>
+                    <div class="price">&#8363;112.800 <span>&#8363;188.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-22%</span>
+                <div class="image">
+                    <img src="./Uploads/sp2f.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Đèn ngủ để bàn hình hoa</h3>
+                    <div class="price">&#8363;93.600 <span>&#8363;120.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-18%</span>
+                <div class="image">
+                    <img src="./Uploads/sp3f.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Chậu xương rồng len móc</h3>
+                    <div class="price">&#8363;139.000 <span>&#8363;169.000</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-12%</span>
+                <div class="image">
+                    <img src="./Uploads/sp4f.jpg" alt="" />
+                    <div class="icons">
+                        <form class="cart-btn1" action="" method="post">
+                            <button type="submit"><i class="fas fa-heart"></i></button>
+                        </form>
+                        <form action="" method="post" class="form-ac">
+                            <button class="form-ac" type="submit">Thêm vào giỏ</button>
+                        </form>
+                        <form class="cart-btn1" action="#">
+                            <button type="submit"><i class="fas fa-share"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Túi xách tay len đan</h3>
+                    <div class="price">&#8363;265.000 <span>&#8363;300.000</span></div>
+                </div>
+            </div>
+        </div>
+
+        <a href="./ProductView.html" class="bt">Xem tất cả các sản phẩm</a>
+    </section>
+
+    <section class="tutorial" id="tutorial">
+        <h1 class="heading">Hướng Dẫn Làm <span> Sản Phẩm Handmade</span></h1>
+
+        <div class="video-container">
+            <div class="row">
+                <video controls src="./Uploads/vd1.mp4" muted></video>
+
+                <div class="content">
+                    <h3>Cách làm giỏ đính ngọc trai?</h3>
+                    <a href="#" class="btt"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <video controls src="./Uploads/vd2.mp4" muted></video>
+
+                <div class="content">
+                    <h3>Cách làm chậu cây hoạ tiết hoa?</h3>
+                    <a href="#" class="btt"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <video controls src="./Uploads/vd3.mp4" muted></video>
+
+                <div class="content">
+                    <h3>Cách làm tua rua trang trí?</h3>
+                    <a href="#" class="btt"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <video controls src="./Uploads/vd4.mp4" muted></video>
+
+                <div class="content">
+                    <h3>Cách làm hoa cúc nhiều cánh?</h3>
+                    <a href="#" class="btt"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <video controls src="./Uploads/vd5.mp4" muted></video>
+
+                <div class="content">
+                    <h3>Cách làm chậu hoa trong suốt?</h3>
+                    <a href="#" class="btt"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <video controls src="./Uploads/vd6.mp4" muted></video>
+
+                <div class="content">
+                    <h3>Cách làm nến hoạ tiết hoa lá?</h3>
+                    <a href="#" class="btt"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <video controls src="./Uploads/vd7.mp4" muted></video>
+
+                <div class="content">
+                    <h3>Cách làm chậu hoa vàng?</h3>
+                    <a href="#" class="btt"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <video controls src="./Uploads/vd8.mp4" muted></video>
+
+                <div class="content">
+                    <h3>Cách làm thẻ đánh dấu sách hoạ tiết lá?</h3>
+                    <a href="#" class="btt"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <a href="./TutorialView.html" class="bt">Xem tất cả các hướng dẫn</a>
+    </section>
+
+    <section class="review" id="review">
+        <h1 class="heading">Đánh Giá Của <span> Khách Hàng</span></h1>
+
+        <div class="swiper review-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>
+                        Tôi thực sự rất thích trang web này, tôi đã tìm thấy rất nhiều
+                        hướng dẫn để tạo ra những đồ trang trí xinh xắn. Tuy nhiên, tôi
+                        muốn trang web có thêm nhiều hướng dẫn về các sản phẩm khác nữa.
+                    </p>
+                    <div class="user">
+                        <img src="./Uploads/kh1.jpg" alt="" />
+                        <div class="user-info">
+                            <h3>Thuỳ Trâm</h3>
+                            <span>Khách hàng hài lòng</span>
+                        </div>
+                    </div>
+                    <span class="fas fa-quote-right"></span>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>
+                        Trang web có một nền tảng bán hàng rất tốt để bạn có thể đặt mua
+                        các sản phẩm. Tôi đã mua một số bộ trang trí thủ công khác nhau và
+                        tất cả đều được đóng gói rất cẩn thận và gửi đến nhanh chóng.
+                    </p>
+                    <div class="user">
+                        <img src="./Uploads/kh2.jpg" alt="" />
+                        <div class="user-info">
+                            <h3>Tố Uyên</h3>
+                            <span>Khách hàng hài lòng</span>
+                        </div>
+                    </div>
+                    <span class="fas fa-quote-right"></span>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>
+                        Tôi đã tìm thấy nhiều ý tưởng tuyệt vời để tạo ra các sản phẩm
+                        handmade từ trang web. Hướng dẫn rất dễ hiểu và tất cả những gì
+                        cần làm để tạo ra các sản phẩm đều được liệt kê rõ ràng.
+                    </p>
+                    <div class="user">
+                        <img src="./Uploads/kh3.jpg" alt="" />
+                        <div class="user-info">
+                            <h3>Ngọc Trí</h3>
+                            <span>Khách hàng hài lòng</span>
+                        </div>
+                    </div>
+                    <span class="fas fa-quote-right"></span>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>
+                        Tôi đã thử nhiều trang web khác nhau để tìm nơi mua sản phẩm
+                        handmade, nhưng trang web này là tốt nhất. Sản phẩm của họ độc đáo
+                        và chất lượng, còn giá cả rất hợp lý. Tôi cũng thích những hướng
+                        dẫn chi tiết của họ.
+                    </p>
+                    <div class="user">
+                        <img src="./Uploads/kh4.jpg" alt="" />
+                        <div class="user-info">
+                            <h3>Thị Hà</h3>
+                            <span>Khách hàng hài lòng</span>
+                        </div>
+                    </div>
+                    <span class="fas fa-quote-right"></span>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>
+                        Trang web này rất dễ sử dụng và có nhiều lựa chọn sản phẩm chất
+                        lượng. Tôi đã mua rất nhiều sản phẩm từ đây và tôi không bao giờ
+                        bị thất vọng. Tôi cũng rất đánh giá cao dịch vụ giao hàng nhanh
+                        chóng của họ.
+                    </p>
+                    <div class="user">
+                        <img src="./Uploads/kh5.jpg" alt="" />
+                        <div class="user-info">
+                            <h3>Văn Cừ</h3>
+                            <span>Khách hàng hài lòng</span>
+                        </div>
+                    </div>
+                    <span class="fas fa-quote-right"></span>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1 class="heading"><span> Liên Hệ </span> Chúng Tôi</h1>
+
+        <div class="row">
+            <form action="">
+                <input type="text" placeholder="Tên" class="box" />
+                <input type="email" placeholder="Email" class="box" />
+                <input type="number" placeholder="Số điện thoại" class="box" />
+                <textarea name=""
+                          class="box"
+                          placeholder="Lời nhắn"
+                          id=""
+                          cols="30"
+                          rows="10"></textarea>
+                <input type="submit" value="Gửi phản hồi" class="btn" />
+            </form>
+
+            <div class="image">
+                <img src="./Uploads/ct.png" alt="" />
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Mục Lục</h3>
+                <a href="./HomeView.html#">Trang Chủ</a>
+                <a href="./HomeView.html#about">Giới Thiệu</a>
+                <a href="./HomeView.html#products">Sản Phẩm</a>
+                <a href="./HomeView.html#tutorial">Hướng Dẫn</a>
+                <a href="./HomeView.html#review">Đánh Giá</a>
+                <a href="./HomeView.html#contact">Liên Hệ</a>
+            </div>
+
+            <div class="box">
+                <h3>Tài Khoản</h3>
+                <a href="./HeartView.html">Mục Yêu Thích</a>
+                <a href="./CartView.html">Đơn Hàng Của Tôi</a>
+                <a href="./LoginView.html">Tài Khoản Của Tôi</a>
+            </div>
+
+            <div class="box">
+                <h3>Hỗ Trợ</h3>
+                <a href="#">Mua Hàng</a>
+                <a href="#">Bán Hàng</a>
+                <a href="#">Thanh Toán</a>
+                <a href="#">Trả Hàng & Hoàn Tiền</a>
+                <a href="#">Chăm Sóc Khách Hàng</a>
+            </div>
+
+            <div class="box">
+                <h3>Thông Tin Liên Hệ</h3>
+                <a href="#">0123 456 789</a>
+                <a href="#">Handmade@gmail.com</a>
+                <a href="#">116-Ngũ Hành Sơn, Đà Nẵng</a>
+                <img src="./Uploads/tt.jpg" alt="image" />
+            </div>
+        </div>
+
+        <div class="credit">
+            &copy;2024 <span>Handmade</span> | Tất Cả Các Quyền Được Bảo Lưu.
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
